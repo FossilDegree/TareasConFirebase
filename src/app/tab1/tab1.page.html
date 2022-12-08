@@ -35,7 +35,7 @@
           ir guardando indice para borrar tras ; en for-->
         <ion-item-sliding *ngFor="let item of tasks; let i=index">
           <ion-item >
-            <ion-label>{{item}} </ion-label>
+            <ion-label>{{item.name}} </ion-label>
           </ion-item>
           <!--
             Side end para el lado derecho
@@ -75,12 +75,12 @@
 
 
           -->
-          <ion-item-options side="end" (ionSwipe)="removeTask(i)">
+          <ion-item-options side="end" (ionSwipe)="removeTask(item.id)">
             <ion-item-option expandable color="danger" >
               <ion-icon name="trash-outline"></ion-icon>
             </ion-item-option>
           </ion-item-options>
-          <ion-item-options side="start" (ionSwipe)="completeTask(i)">
+          <ion-item-options side="start" (ionSwipe)="completeTask(item.id)">
             <ion-item-option expandable color="primary">
               <ion-icon name="checkmark-outline"></ion-icon>
             </ion-item-option>
